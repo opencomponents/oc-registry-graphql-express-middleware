@@ -1,7 +1,7 @@
 {
   "name": "oc-registry-graphql-express-middleware",
   "version": "1.0.0-alpha.1",
-  "description": "oc-registry-graphql-express-middleware",
+  "description": "OpenComponent Registry GraphQL Express middleware.",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage"
