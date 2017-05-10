@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expect res setHeader and end to match snapshot 1`] = `
+Array [
+  Array [
+    "Content-Type",
+    "application/json; charset=utf-8",
+  ],
+]
+`;
+
+exports[`expect res setHeader and end to match snapshot 2`] = `
+Array [
+  Array [
+    "{\\"data\\":{\\"registry\\":{\\"href\\":\\"http://mock:3000/\\",\\"ocVersion\\":\\"8.1.5\\",\\"type\\":\\"mock-registry\\"}}}",
+  ],
+]
+`;
