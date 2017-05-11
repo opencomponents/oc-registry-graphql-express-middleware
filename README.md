@@ -10,4 +10,4 @@ const middleware = require('oc-registry-graphql-express-middleware'); // once av
 registry.app.use('/graphql', middleware({ baseUrl: 'http://localhost:3000/', graphiql: true }));
 ```
 
-![query-registry](query-registry.png "query-registry")
+![query-registry](query-registry-v2.png "query-registry")
