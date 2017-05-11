@@ -4,6 +4,7 @@
   "description": "OpenComponent Registry GraphQL Express middleware.",
   "main": "index.js",
   "scripts": {
+    "compile": "babel src --out-dir dist",
     "npm-check": "npm-check",
     "test": "jest --coverage"
   },
@@ -28,6 +29,7 @@
   },
   "homepage": "https://github.com/opencomponents/oc-registry-graphql-express-middleware#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-polyfill": "^6.23.0",
