@@ -1,6 +1,6 @@
 {
   "name": "oc-registry-graphql-express-middleware",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "OpenComponent Registry GraphQL Express middleware.",
   "main": "index.js",
   "scripts": {
