@@ -1,5 +1,7 @@
 # oc-registry-graphql-express-middleware
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/opencomponents/oc-registry-graphql-express-middleware.svg)](https://greenkeeper.io/)
+
 OpenComponent Registry GraphQL Express middleware.
 
 ## How to install
