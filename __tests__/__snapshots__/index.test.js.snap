@@ -12,7 +12,7 @@ Array [
 exports[`expect res setHeader and end to match snapshot 2`] = `
 Array [
   Array [
-    "{\\"data\\":{\\"registry\\":{\\"href\\":\\"http://mock:3000/\\",\\"ocVersion\\":\\"8.1.5\\",\\"type\\":\\"mock-registry\\"}}}",
+    "{\\"data\\":{\\"registry\\":{\\"href\\":\\"http://mock:3000/\\",\\"ocVersion\\":\\"1.2.3\\",\\"type\\":\\"mock-registry\\"},\\"components\\":[{\\"name\\":\\"oc-a-component\\",\\"description\\":\\"Awesome OpenComponent\\",\\"version\\":\\"4.5.6\\"}],\\"component\\":{\\"name\\":\\"oc-a-component\\",\\"description\\":\\"Awesome OpenComponent\\",\\"version\\":\\"4.5.6\\"}}}",
   ],
 ]
 `;

@@ -15,8 +15,14 @@ test('expect type of middleware to be function', () => {
 test('expect res setHeader and end to match snapshot', async () => {
   fetch.mockResponse(JSON.stringify({
     href: options.baseUrl,
-    ocVersion: '8.1.5',
-    type: 'mock-registry'
+    ocVersion: '1.2.3',
+    type: 'mock-registry',
+    components: [
+      `${options.baseUrl}oc-a-component`
+    ],
+    name: 'oc-a-component',
+    description: 'Awesome OpenComponent',
+    version: '4.5.6'
   }));
 
   const req = {
@@ -28,6 +34,16 @@ test('expect res setHeader and end to match snapshot', async () => {
         href
         ocVersion
         type
+      }
+      components {
+        name
+        description
+        version
+      }
+      component(name: "oc-a-component") {
+        name
+        description
+        version
       }
     }
     `
