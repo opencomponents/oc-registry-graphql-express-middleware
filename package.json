@@ -39,9 +39,9 @@
     "eslint-plugin-jsx-a11y": "^5.0.1",
     "eslint-plugin-react": "^7.0.0",
     "isomorphic-fetch": "^2.2.1",
-    "jest": "^20.0.0",
+    "jest": "^20.0.1",
     "jest-fetch-mock": "^1.1.1",
-    "npm-check": "^5.4.0"
+    "npm-check": "^5.4.4"
   },
   "dependencies": {
     "babel-core": "^6.24.1",
