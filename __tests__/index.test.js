@@ -8,11 +8,64 @@ const options = {
 
 const middleware = factory(options);
 
+const query = `
+{
+  registry {
+    href
+    ocVersion
+    type
+  }
+  components {
+    name
+    description
+    version
+    allVersions
+    author {
+      name
+      email
+    }
+    repository {
+      type
+      url
+    }
+    parameters {
+      key
+      type
+      mandatory
+      example
+      description
+    }
+  }
+  component(name: "oc-apod") {
+    name
+    description
+    version
+    allVersions
+    author {
+      name
+      email
+    }
+    repository {
+      type
+      url
+    }
+    parameters {
+      key
+      type
+      mandatory
+      example
+      description
+    }
+  }
+}
+`;
+
 test('expect type of middleware to be function', () => {
   expect(typeof middleware).toBe('function');
 });
 
 test('expect res setHeader and end to match snapshot', async () => {
+  // todo: change mockResponse
   fetch.mockResponse(JSON.stringify({
     href: options.baseUrl,
     ocVersion: '1.2.3',
@@ -22,31 +75,24 @@ test('expect res setHeader and end to match snapshot', async () => {
     ],
     name: 'oc-a-component',
     description: 'Awesome OpenComponent',
-    version: '4.5.6'
+    version: '4.5.6',
+    allVersions: ['4.5.4', '4.5.5', '4.5.6'],
+    oc: {
+      parameters: {
+        id: {
+          type: 'string',
+          mandatory: true,
+          example: '815',
+          description: 'The Id'
+        }
+      }
+    }
   }));
 
   const req = {
     method: 'GET',
     headers: {},
-    url: `?query=
-    {
-      registry {
-        href
-        ocVersion
-        type
-      }
-      components {
-        name
-        description
-        version
-      }
-      component(name: "oc-a-component") {
-        name
-        description
-        version
-      }
-    }
-    `
+    url: `?query=${query}`
   };
 
   const res = { setHeader: jest.fn(), end: jest.fn() };

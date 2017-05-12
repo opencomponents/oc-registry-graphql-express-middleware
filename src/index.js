@@ -11,10 +11,32 @@ const schema = buildSchema(`
     type: String
   }
 
+  type Person {
+    name: String
+    email: String
+  }
+
+  type Repository {
+    type: String
+    url: String
+  }
+
+  type Parameter {
+    key: String
+    type: String
+    mandatory: Boolean
+    example: String
+    description: String
+  }
+
   type Component {
     name: String
     description: String
     version: String
+    allVersions: [String]
+    author: Person
+    repository: Repository
+    parameters: [Parameter]
   }
 
   type Query {
@@ -35,7 +57,14 @@ const fetchComponent = async (url) => {
 const makeComponent = async (baseUrl, name) => {
   const url = `${baseUrl}${name}/~info`;
   const info = await fetchComponent(url);
-  const copy = Object.assign({}, info);
+
+  let parameters = [];
+  if (info.oc.parameters) {
+    parameters = Object.keys(info.oc.parameters)
+      .map(key => ({ key, ...info.oc.parameters[key] }));
+  }
+
+  const copy = Object.assign({}, info, { parameters });
   return copy;
 };
 

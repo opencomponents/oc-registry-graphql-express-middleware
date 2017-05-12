@@ -1,5 +1,7 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 /* eslint-disable arrow-body-style */
@@ -11,7 +13,7 @@ var _require = require('graphql'),
 
 var fetch = require('node-fetch');
 
-var schema = buildSchema('\n  type Registry {\n    href: String\n    ocVersion: String\n    type: String\n  }\n\n  type Component {\n    name: String\n    description: String\n    version: String\n  }\n\n  type Query {\n    registry: Registry\n    component(name: String): Component\n    components: [Component]\n  }\n');
+var schema = buildSchema('\n  type Registry {\n    href: String\n    ocVersion: String\n    type: String\n  }\n\n  type Person {\n    name: String\n    email: String\n  }\n\n  type Repository {\n    type: String\n    url: String\n  }\n\n  type Parameter {\n    key: String\n    type: String\n    mandatory: Boolean\n    example: String\n    description: String\n  }\n\n  type Component {\n    name: String\n    description: String\n    version: String\n    allVersions: [String]\n    author: Person\n    repository: Repository\n    parameters: [Parameter]\n  }\n\n  type Query {\n    registry: Registry\n    component(name: String): Component\n    components: [Component]\n  }\n');
 
 var fetchComponent = function () {
   var _ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(url) {
@@ -40,7 +42,7 @@ var fetchComponent = function () {
 
 var makeComponent = function () {
   var _ref2 = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(baseUrl, name) {
-    var url, info, copy;
+    var url, info, parameters, copy;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
@@ -51,10 +53,18 @@ var makeComponent = function () {
 
           case 3:
             info = _context2.sent;
-            copy = Object.assign({}, info);
+            parameters = [];
+
+            if (info.oc.parameters) {
+              parameters = Object.keys(info.oc.parameters).map(function (key) {
+                return _extends({ key: key }, info.oc.parameters[key]);
+              });
+            }
+
+            copy = Object.assign({}, info, { parameters: parameters });
             return _context2.abrupt('return', copy);
 
-          case 6:
+          case 8:
           case 'end':
             return _context2.stop();
         }
