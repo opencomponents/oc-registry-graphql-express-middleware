@@ -13,7 +13,7 @@ yarn add oc-registry-graphql-express-middleware
 ```javascript
 const graphql = require('oc-registry-graphql-express-middleware');
 
-registry.app.use('/graphql', graphql({ baseUrl: 'http://localhost:3000/', graphiql: true }));
+registry.app.use('/graphql', graphql({ baseUrl: configuration.baseUrl, graphiql: configuration.discovery }));
 ```
 
 ![query-registry](query-registry-v1.0.0.png "query-registry")
