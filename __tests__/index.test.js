@@ -3,7 +3,8 @@ const factory = require('../src/index');
 
 const options = {
   baseUrl: 'http://mock:3000/',
-  graphiql: true
+  graphiql: true,
+  dependencies: ['graphql', 'lodash', 'moment']
 };
 
 const middleware = factory(options);
@@ -14,6 +15,7 @@ const query = `
     href
     ocVersion
     type
+    dependencies
   }
   components {
     name

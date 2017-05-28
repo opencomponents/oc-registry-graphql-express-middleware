@@ -13,9 +13,18 @@ yarn add oc-registry-graphql-express-middleware
 ## How to use it w/in your Registry
 
 ```javascript
+require('babel-core/register');
+require('babel-polyfill');
+
 const graphql = require('oc-registry-graphql-express-middleware');
 
-registry.app.use('/graphql', graphql({ baseUrl: configuration.baseUrl, graphiql: configuration.discovery }));
+const options = {
+  baseUrl: configuration.baseUrl,
+  graphiql: configuration.discovery,
+  dependencies: configuration.dependencies
+};
+
+registry.app.use('/graphql', graphql(options));
 ```
 
 ![query-registry](query-registry-v1.0.0.png "query-registry")

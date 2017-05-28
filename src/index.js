@@ -9,6 +9,7 @@ const schema = buildSchema(`
     href: String
     ocVersion: String
     type: String
+    dependencies: [String]
   }
 
   type Person {
@@ -77,7 +78,8 @@ const root = (options) => {
           return {
             href: data.href,
             ocVersion: data.ocVersion,
-            type: data.type
+            type: data.type,
+            dependencies: options.dependencies
           };
         });
     },
