@@ -55,7 +55,7 @@ var makeComponent = function () {
             info = _context2.sent;
             parameters = [];
 
-            if (info.oc.parameters) {
+            if (info.oc && info.oc.parameters) {
               parameters = Object.keys(info.oc.parameters).map(function (key) {
                 return _extends({ key: key }, info.oc.parameters[key]);
               });
