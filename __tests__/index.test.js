@@ -1,4 +1,4 @@
-// const fetch = require('node-fetch');
+const fetch = require('node-fetch');
 const factory = require('../src');
 
 const options = {
@@ -67,6 +67,8 @@ test('expect type of middleware to be function', () => {
 });
 
 test('expect res setHeader and end to match snapshot', async () => {
+  fetch.mockResponse(JSON.stringify({}));
+
   const req = {
     method: 'GET',
     headers: {

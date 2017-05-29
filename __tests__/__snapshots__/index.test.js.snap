@@ -8,7 +8,7 @@ Array [
   ],
   Array [
     "Content-Length",
-    "5100",
+    "252",
   ],
 ]
 `;
@@ -17,304 +17,24 @@ exports[`expect res setHeader and end to match snapshot 2`] = `
 Object {
   "data": Object {
     "component": Object {
-      "allVersions": Array [
-        "1.3.0",
-        "1.2.0",
-        "1.1.1",
-        "1.1.0",
-        "1.0.0",
-      ],
-      "author": Object {
-        "email": "mattia.richetto@gmail.com",
-        "name": "Mattia Richetto",
-      },
-      "description": "This component displays picture, title, description and date of the NASA's Astronomy Picture of the Day",
-      "name": "oc-apod",
-      "parameters": Array [
-        Object {
-          "description": "The NASA Open APIs key",
-          "example": "DEMO_KEY",
-          "key": "apiKey",
-          "mandatory": true,
-          "type": "string",
-        },
-      ],
-      "repository": Object {
-        "type": "git",
-        "url": "https://github.com/mattiaerre/oc-hub/tree/master/oc-apod",
-      },
-      "version": "1.3.0",
+      "allVersions": null,
+      "author": null,
+      "description": null,
+      "name": null,
+      "parameters": Array [],
+      "repository": null,
+      "version": null,
     },
-    "components": Array [
-      Object {
-        "allVersions": Array [
-          "1.3.0",
-          "1.2.0",
-          "1.1.1",
-          "1.1.0",
-          "1.0.0",
-        ],
-        "author": Object {
-          "email": "mattia.richetto@gmail.com",
-          "name": "Mattia Richetto",
-        },
-        "description": "This component displays picture, title, description and date of the NASA's Astronomy Picture of the Day",
-        "name": "oc-apod",
-        "parameters": Array [
-          Object {
-            "description": "The NASA Open APIs key",
-            "example": "DEMO_KEY",
-            "key": "apiKey",
-            "mandatory": true,
-            "type": "string",
-          },
-        ],
-        "repository": Object {
-          "type": "git",
-          "url": "https://github.com/mattiaerre/oc-hub/tree/master/oc-apod",
-        },
-        "version": "1.3.0",
-      },
-      Object {
-        "allVersions": Array [
-          "0.37.4",
-          "0.37.2",
-          "0.37.0",
-          "0.36.27",
-          "0.36.26",
-          "0.36.25",
-          "0.36.21",
-          "0.36.13",
-          "0.36.4",
-          "0.36.1",
-        ],
-        "author": Object {
-          "email": null,
-          "name": null,
-        },
-        "description": "The OpenComponents client-side javascript client",
-        "name": "oc-client",
-        "parameters": Array [],
-        "repository": Object {
-          "type": null,
-          "url": null,
-        },
-        "version": "0.37.4",
-      },
-      Object {
-        "allVersions": Array [
-          "1.1.0",
-          "1.0.1",
-          "1.0.0",
-        ],
-        "author": Object {
-          "email": "mattia.richetto@gmail.com",
-          "name": "Mattia Richetto",
-        },
-        "description": "A header for a website with logo and title",
-        "name": "oc-columbus-header",
-        "parameters": Array [
-          Object {
-            "description": "The main title",
-            "example": "Instagram",
-            "key": "title",
-            "mandatory": true,
-            "type": "string",
-          },
-          Object {
-            "description": "The logo's absolute url",
-            "example": "http://www.uidownload.com/files/722/15/621/facebook-instagram-instagram-2016-instagram-logo-new-new-instagram-icon.png",
-            "key": "logoUrl",
-            "mandatory": true,
-            "type": "string",
-          },
-        ],
-        "repository": Object {
-          "type": "git",
-          "url": "https://github.com/mattiaerre/oc-hub/tree/master/oc-columbus-header",
-        },
-        "version": "1.1.0",
-      },
-      Object {
-        "allVersions": Array [
-          "1.0.4",
-          "1.0.3",
-          "1.0.2",
-          "1.0.1",
-          "1.0.0",
-        ],
-        "author": Object {
-          "email": "mattia.richetto@gmail.com",
-          "name": "Mattia Richetto",
-        },
-        "description": "This example shows how to make an HTTP POST request w/ OpenComponents.",
-        "name": "oc-feedback-form",
-        "parameters": Array [],
-        "repository": Object {
-          "type": "git",
-          "url": "https://github.com/mattiaerre/oc-hub/tree/master/oc-feedback-form",
-        },
-        "version": "1.0.4",
-      },
-      Object {
-        "allVersions": Array [
-          "1.0.0-alpha.2",
-          "1.0.0-alpha.1",
-        ],
-        "author": Object {
-          "email": "mattia.richetto@gmail.com",
-          "name": "Mattia Richetto",
-        },
-        "description": "oc-micro-api",
-        "name": "oc-micro-api",
-        "parameters": Array [],
-        "repository": Object {
-          "type": "git",
-          "url": "https://github.com/mattiaerre/oc-hub/tree/master/oc-micro-api",
-        },
-        "version": "1.0.0-alpha.2",
-      },
-      Object {
-        "allVersions": Array [
-          "1.7.0",
-          "1.6.1",
-          "1.6.0",
-          "1.5.0",
-          "1.4.0",
-          "1.3.0",
-          "1.2.0",
-          "1.1.0",
-          "1.0.0",
-        ],
-        "author": Object {
-          "email": "mattia.richetto@gmail.com",
-          "name": "Mattia Richetto",
-        },
-        "description": "When, from where and what is going to be my next run.",
-        "name": "oc-my-next-run",
-        "parameters": Array [
-          Object {
-            "description": "The id of the run to display",
-            "example": "2017-03-19",
-            "key": "id",
-            "mandatory": true,
-            "type": "string",
-          },
-        ],
-        "repository": Object {
-          "type": "git",
-          "url": "https://github.com/mattiaerre/oc-hub/tree/master/oc-my-next-run",
-        },
-        "version": "1.7.0",
-      },
-      Object {
-        "allVersions": Array [
-          "1.1.1",
-          "1.1.0",
-          "1.0.0",
-        ],
-        "author": Object {
-          "email": "mattia.richetto@gmail.com",
-          "name": "Mattia Richetto",
-        },
-        "description": "The list of my social media; this component is used in https://mattiaerre.github.io's footer",
-        "name": "oc-social-media-buttons",
-        "parameters": Array [],
-        "repository": Object {
-          "type": "git",
-          "url": "https://github.com/mattiaerre/oc-hub/tree/master/oc-social-media-buttons",
-        },
-        "version": "1.1.1",
-      },
-      Object {
-        "allVersions": Array [
-          "1.0.0",
-        ],
-        "author": Object {
-          "email": "mattia.richetto@gmail.com",
-          "name": "Mattia Richetto",
-        },
-        "description": "This is sometimes called timeago or relative time.",
-        "name": "oc-timeago",
-        "parameters": Array [
-          Object {
-            "description": "The start date as string in a YYYY-MM-DD format",
-            "example": "2016-02-22",
-            "key": "start",
-            "mandatory": true,
-            "type": "string",
-          },
-          Object {
-            "description": "The end date as string in a YYYY-MM-DD format",
-            "example": "2017-02-22",
-            "key": "end",
-            "mandatory": false,
-            "type": "string",
-          },
-        ],
-        "repository": Object {
-          "type": "git",
-          "url": "https://github.com/mattiaerre/oc-hub/tree/master/oc-timeago",
-        },
-        "version": "1.0.0",
-      },
-      Object {
-        "allVersions": Array [
-          "1.0.1",
-          "1.0.0",
-          "1.0.0-alpha.1",
-        ],
-        "author": Object {
-          "email": "mattia.richetto@gmail.com",
-          "name": "Mattia Richetto",
-        },
-        "description": "This is the Google Universal Analytics tracking code for a given Tracking ID.",
-        "name": "oc-ua-tracking-code",
-        "parameters": Array [
-          Object {
-            "description": "The Google Analytics Tracking ID",
-            "example": "UA-12345678-9",
-            "key": "trackingId",
-            "mandatory": true,
-            "type": "string",
-          },
-        ],
-        "repository": Object {
-          "type": "git",
-          "url": "https://github.com/mattiaerre/oc-ua-tracking-code/tree/master/oc-micro-api",
-        },
-        "version": "1.0.1",
-      },
-      Object {
-        "allVersions": Array [
-          "1.1.1",
-          "1.1.0",
-          "1.0.1",
-          "1.0.0",
-        ],
-        "author": Object {
-          "email": "mattia.richetto@gmail.com",
-          "name": "Mattia Richetto",
-        },
-        "description": "oc-with-react",
-        "name": "oc-with-react",
-        "parameters": Array [],
-        "repository": Object {
-          "type": null,
-          "url": null,
-        },
-        "version": "1.1.1",
-      },
-    ],
+    "components": Array [],
     "registry": Object {
       "dependencies": Array [
         "graphql",
         "lodash",
         "moment",
       ],
-      "href": "https://pink-pineapple.herokuapp.com/",
-      "ocVersion": "0.37.4",
-      "type": "oc-registry",
+      "href": null,
+      "ocVersion": null,
+      "type": null,
     },
   },
 }
