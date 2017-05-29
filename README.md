@@ -29,4 +29,6 @@ const options = {
 registry.app.use('/graphql', graphql(options));
 ```
 
-![query-registry](query-registry-v1.0.0.png "query-registry")
+> N.B.: `configuration` in the example above is the object used to configure the OpenComponents Registry
+
+![query-registry](query-registry-v1.1.3.png "query-registry")
