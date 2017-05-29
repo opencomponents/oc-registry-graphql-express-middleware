@@ -8,7 +8,7 @@ Array [
   ],
   Array [
     "Content-Length",
-    "252",
+    "789",
   ],
 ]
 `;
@@ -17,24 +17,60 @@ exports[`expect res setHeader and end to match snapshot 2`] = `
 Object {
   "data": Object {
     "component": Object {
-      "allVersions": null,
+      "allVersions": Array [
+        "1.0.0",
+        "1.1.0",
+        "1.1.1",
+        "1.2.0",
+        "1.3.0",
+      ],
       "author": null,
-      "description": null,
-      "name": null,
-      "parameters": Array [],
+      "description": "This component displays picture, title, description and date of the NASA's Astronomy Picture of the Day",
+      "name": "oc-apod",
+      "parameters": Array [
+        Object {
+          "description": "The NASA Open APIs key",
+          "example": "DEMO_KEY",
+          "key": "apiKey",
+          "mandatory": true,
+          "type": "string",
+        },
+      ],
       "repository": null,
-      "version": null,
+      "version": "1.3.0",
     },
-    "components": Array [],
+    "components": Array [
+      Object {
+        "allVersions": Array [
+          "4.5.4",
+          "4.5.5",
+          "4.5.6",
+        ],
+        "author": null,
+        "description": "Awesome OpenComponent",
+        "name": "oc-a-component",
+        "parameters": Array [
+          Object {
+            "description": "The Id",
+            "example": "789",
+            "key": "id",
+            "mandatory": true,
+            "type": "string",
+          },
+        ],
+        "repository": null,
+        "version": "4.5.6",
+      },
+    ],
     "registry": Object {
       "dependencies": Array [
         "graphql",
         "lodash",
         "moment",
       ],
-      "href": null,
-      "ocVersion": null,
-      "type": null,
+      "href": "http://mock:3000/",
+      "ocVersion": "1.2.3",
+      "type": "mock-registry",
     },
   },
 }

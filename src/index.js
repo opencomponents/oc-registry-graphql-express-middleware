@@ -87,9 +87,6 @@ const root = (options) => {
       return fetch(options.baseUrl)
         .then(response => response.json())
         .then((data) => {
-          if (!data.components) {
-            return [];
-          }
           return data.components
             .map((component) => {
               const name = component.replace(options.baseUrl, '');
