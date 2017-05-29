@@ -1,8 +1,8 @@
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
 const factory = require('../src');
 
 const options = {
-  baseUrl: 'http://mock:3000/',
+  baseUrl: 'https://pink-pineapple.herokuapp.com/',
   graphiql: true,
   dependencies: ['graphql', 'lodash', 'moment']
 };
@@ -66,34 +66,12 @@ test('expect type of middleware to be function', () => {
   expect(typeof middleware).toBe('function');
 });
 
-test.skip('expect res setHeader and end to match snapshot', async () => {
-  // todo: change mockResponse
-  fetch.mockResponse(JSON.stringify({
-    href: options.baseUrl,
-    ocVersion: '1.2.3',
-    type: 'mock-registry',
-    components: [
-      `${options.baseUrl}oc-a-component`
-    ],
-    name: 'oc-a-component',
-    description: 'Awesome OpenComponent',
-    version: '4.5.6',
-    allVersions: ['4.5.4', '4.5.5', '4.5.6'],
-    oc: {
-      parameters: {
-        id: {
-          type: 'string',
-          mandatory: true,
-          example: '815',
-          description: 'The Id'
-        }
-      }
-    }
-  }));
-
+test('expect res setHeader and end to match snapshot', async () => {
   const req = {
     method: 'GET',
-    headers: {},
+    headers: {
+      'Content-Type': 'application/json'
+    },
     url: `?query=${query}`
   };
 
@@ -101,6 +79,8 @@ test.skip('expect res setHeader and end to match snapshot', async () => {
 
   await middleware(req, res);
 
+  expect(res.setHeader).toHaveBeenCalled();
   expect(res.setHeader.mock.calls).toMatchSnapshot();
-  expect(res.end.mock.calls).toMatchSnapshot();
+  expect(res.end).toHaveBeenCalled();
+  expect(JSON.parse(res.end.mock.calls)).toMatchSnapshot();
 });
