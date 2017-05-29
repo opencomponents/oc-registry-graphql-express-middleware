@@ -1,7 +1,7 @@
 {
   "name": "oc-registry-graphql-express-middleware",
   "version": "1.1.3",
-  "description": "OpenComponent Registry GraphQL Express middleware.",
+  "description": "OpenComponents Registry GraphQL Express middleware.",
   "main": "index.js",
   "scripts": {
     "compile": "babel src --out-dir dist",
