@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`expect res setHeader and end to match snapshot 1`] = `
+exports[`index expect res setHeader and end to match snapshot 1`] = `
 Array [
   Array [
     "Content-Type",
@@ -13,7 +13,7 @@ Array [
 ]
 `;
 
-exports[`expect res setHeader and end to match snapshot 2`] = `
+exports[`index expect res setHeader and end to match snapshot 2`] = `
 Object {
   "data": Object {
     "component": Object {

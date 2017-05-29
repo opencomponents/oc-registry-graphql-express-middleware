@@ -62,70 +62,73 @@ const query = `
 }
 `;
 
-test('expect type of middleware to be function', () => {
-  expect(typeof middleware).toBe('function');
-});
+describe('index', () => {
+  test('expect type of middleware to be function', () => {
+    expect(typeof middleware).toBe('function');
+  });
 
-test('expect res setHeader and end to match snapshot', async () => {
-  fetch.mockResponses(
-    [JSON.stringify({
-      href: options.baseUrl,
-      ocVersion: '1.2.3',
-      type: 'mock-registry'
-    })],
-    [JSON.stringify({
-      name: 'oc-apod',
-      description: 'This component displays picture, title, description and date of the NASA\'s Astronomy Picture of the Day',
-      version: '1.3.0',
-      allVersions: ['1.0.0', '1.1.0', '1.1.1', '1.2.0', '1.3.0'],
-      oc: {
-        parameters: {
-          apiKey: {
-            type: 'string',
-            mandatory: true,
-            example: 'DEMO_KEY',
-            description: 'The NASA Open APIs key'
+  test('expect res setHeader and end to match snapshot', async () => {
+    fetch.mockResponses(
+      [JSON.stringify({
+        href: options.baseUrl,
+        ocVersion: '1.2.3',
+        type: 'mock-registry'
+      })],
+      [JSON.stringify({
+        name: 'oc-apod',
+        description: 'This component displays picture, title, description and date of the NASA\'s Astronomy Picture of the Day',
+        version: '1.3.0',
+        allVersions: ['1.0.0', '1.1.0', '1.1.1', '1.2.0', '1.3.0'],
+        oc: {
+          parameters: {
+            apiKey: {
+              type: 'string',
+              mandatory: true,
+              example: 'DEMO_KEY',
+              description: 'The NASA Open APIs key'
+            }
           }
         }
-      }
-    })],
-    [JSON.stringify({
-      components: [
-        `${options.baseUrl}oc-a-component`
-      ]
-    })],
-    [JSON.stringify({
-      name: 'oc-a-component',
-      description: 'Awesome OpenComponent',
-      version: '4.5.6',
-      allVersions: ['4.5.4', '4.5.5', '4.5.6'],
-      oc: {
-        parameters: {
-          id: {
-            type: 'string',
-            mandatory: true,
-            example: '789',
-            description: 'The Id'
+      })],
+      [JSON.stringify({
+        components: [
+          `${options.baseUrl}oc-a-component`
+        ]
+      })],
+      [JSON.stringify({
+        name: 'oc-a-component',
+        description: 'Awesome OpenComponent',
+        version: '4.5.6',
+        allVersions: ['4.5.4', '4.5.5', '4.5.6'],
+        oc: {
+          parameters: {
+            id: {
+              type: 'string',
+              mandatory: true,
+              example: '789',
+              description: 'The Id'
+            }
           }
         }
-      }
-    })]
-  );
+      })]
+    );
 
-  const req = {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    url: `?query=${query}`
-  };
+    const req = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      url: `?query=${query}`
+    };
 
-  const res = { setHeader: jest.fn(), end: jest.fn() };
+    const res = { setHeader: jest.fn(), end: jest.fn() };
 
-  await middleware(req, res);
+    await middleware(req, res);
 
-  expect(res.setHeader).toHaveBeenCalled();
-  expect(res.setHeader.mock.calls).toMatchSnapshot();
-  expect(res.end).toHaveBeenCalled();
-  expect(JSON.parse(res.end.mock.calls)).toMatchSnapshot();
+    expect(res.setHeader).toHaveBeenCalled();
+    expect(res.setHeader.mock.calls).toMatchSnapshot();
+    expect(res.end).toHaveBeenCalled();
+    expect(JSON.parse(res.end.mock.calls)).toMatchSnapshot();
+  });
 });
+
