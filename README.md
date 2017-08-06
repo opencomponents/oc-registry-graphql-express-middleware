@@ -9,7 +9,7 @@ OpenComponents Registry GraphQL Express middleware.
 ## How to install
 
 ```bash
-yarn add oc-registry-graphql-express-middleware
+npm add oc-registry-graphql-express-middleware
 ```
 
 ## How to use it w/in your Registry
