@@ -3,7 +3,8 @@
   "rules": {
     "jsx-a11y/img-has-alt": "off",
     "comma-dangle": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "jsx-a11y/href-no-hash": "off"
   },
   "env": {
     "jest": true
