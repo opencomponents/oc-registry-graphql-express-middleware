@@ -1,10 +1,11 @@
 {
   "extends": "airbnb",
   "rules": {
-    "jsx-a11y/img-has-alt": "off",
+    "arrow-parens": "off",
     "comma-dangle": "off",
     "import/no-extraneous-dependencies": "off",
-    "jsx-a11y/href-no-hash": "off"
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/img-has-alt": "off"
   },
   "env": {
     "jest": true

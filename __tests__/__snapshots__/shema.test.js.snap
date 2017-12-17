@@ -82,6 +82,6 @@ GraphQLSchema {
     "__Type": "__Type",
     "__TypeKind": "__TypeKind",
   },
-  "astNode": null,
+  "astNode": undefined,
 }
 `;
