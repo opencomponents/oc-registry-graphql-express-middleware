@@ -97,7 +97,10 @@ describe('index', () => {
       ],
       [
         JSON.stringify({
-          components: [`${options.baseUrl}oc-a-component`]
+          components: [
+            `${options.baseUrl}oc-a-component`,
+            `${options.baseUrl}oc-client`
+          ]
         })
       ],
       [
@@ -116,6 +119,31 @@ describe('index', () => {
               }
             }
           }
+        })
+      ],
+      [
+        JSON.stringify({
+          name: 'oc-client',
+          description: 'The OpenComponents client-side javascript client',
+          version: '0.40.7',
+          allVersions: [
+            '0.40.7',
+            '0.40.1',
+            '0.39.8',
+            '0.38.1',
+            '0.37.11',
+            '0.37.8',
+            '0.37.4',
+            '0.37.2',
+            '0.37.0',
+            '0.36.27',
+            '0.36.26',
+            '0.36.25',
+            '0.36.21',
+            '0.36.13',
+            '0.36.4',
+            '0.36.1'
+          ]
         })
       ]
     );

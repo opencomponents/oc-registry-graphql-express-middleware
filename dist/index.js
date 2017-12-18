@@ -4,8 +4,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
-/* eslint-disable arrow-body-style */
-
 var graphqlHTTP = require('express-graphql');
 var fetch = require('node-fetch');
 var schema = require('./schema');
@@ -52,7 +50,9 @@ var makeComponent = function () {
 
             if (info.oc && info.oc.parameters) {
               parameters = Object.keys(info.oc.parameters).map(function (key) {
-                return _extends({ key: key }, info.oc.parameters[key]);
+                return _extends({
+                  key: key
+                }, info.oc.parameters[key]);
               });
             }
 
