@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "compile": "babel src --out-dir dist",
-    "prettier":
-      "prettier --single-quote --trailing-comma none --write '{src,__tests__}/**/*.js'",
-    "test": "jest --coverage"
+    "prettier": "prettier --single-quote --trailing-comma none --write '{src,__tests__}/**/*.js'",
+    "test": "jest --coverage",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
-    "url":
-      "git+https://github.com/opencomponents/oc-registry-graphql-express-middleware.git"
+    "url": "git+https://github.com/opencomponents/oc-registry-graphql-express-middleware.git"
   },
   "keywords": [
     "express",
@@ -27,11 +27,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url":
-      "https://github.com/opencomponents/oc-registry-graphql-express-middleware/issues"
+    "url": "https://github.com/opencomponents/oc-registry-graphql-express-middleware/issues"
   },
-  "homepage":
-    "https://github.com/opencomponents/oc-registry-graphql-express-middleware#readme",
+  "homepage": "https://github.com/opencomponents/oc-registry-graphql-express-middleware#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.3",
@@ -53,11 +51,15 @@
     "babel-polyfill": "^6.26.0",
     "express-graphql": "^0.6.11",
     "graphql": "^0.12.3",
-    "node-fetch": "^2.0.0"
+    "node-fetch": "^2.0.0",
+    "snyk": "^1.317.0"
   },
   "jest": {
     "automock": false,
-    "setupFiles": ["./setupJest.js"],
+    "setupFiles": [
+      "./setupJest.js"
+    ],
     "testEnvironment": "node"
-  }
+  },
+  "snyk": true
 }
